@@ -1,0 +1,11 @@
+@import "utils";
+
+.topic-list {
+  width: 100%;
+  padding: 1rem 0;
+  @include media(">medium") {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 2rem;
+  }
+}

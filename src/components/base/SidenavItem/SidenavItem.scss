@@ -1,0 +1,26 @@
+@import "utils";
+
+.sidenav-item {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  padding: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.blue {
+    background-image: linear-gradient($oc-blue-5, $oc-blue-3);
+  }
+
+  &.teal {
+    background-image: linear-gradient($oc-teal-5, $oc-teal-3);
+  }
+
+  &.orange {
+    background-image: linear-gradient($oc-orange-5, $oc-orange-3);
+  }
+}

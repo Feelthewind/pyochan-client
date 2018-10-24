@@ -1,0 +1,106 @@
+@import "utils";
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.sidenav-container {
+  width: 100%;
+  height: 100%;
+  .gray-background {
+    background: rgba(100, 100, 100, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    &.enter {
+      animation: fadeIn 0.25s ease-in both;
+    }
+    &.leave {
+      animation: fadeOut 0.25s ease-in both;
+    }
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 80%;
+    // max-width: 300px;
+    background-color: white;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    // padding: 30px;
+    .list {
+      list-style: none;
+      padding: 3rem 0;
+      margin: 0;
+      .item {
+        margin-bottom: 0.5rem;
+      }
+    }
+    .button {
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 500;
+      &:hover {
+        background: $oc-gray-1;
+        cursor: pointer;
+      }
+    }
+    :global .ask-notification {
+      padding: 1rem 1.5rem;
+      width: 100%;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 500;
+      user-select: none;
+      &:hover {
+        background: $oc-gray-1;
+        cursor: pointer;
+      }
+    }
+    &.enter {
+      animation: slideRight 0.25s ease-in both;
+    }
+    &.leave {
+      animation: slideLeft 0.25s ease-in both;
+    }
+  }
+}

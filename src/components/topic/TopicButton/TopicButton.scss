@@ -1,0 +1,29 @@
+@import "utils";
+
+.button {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 4rem;
+  background: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-appearance: none;
+  &:active {
+    border-radius: 4rem;
+    -webkit-appearance: none;
+  }
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+  &.disabled {
+    opacity: 1;
+  }
+  &.read {
+    background: #a1f8ff;
+  }
+  &.complete {
+    background: #80d819;
+  }
+}

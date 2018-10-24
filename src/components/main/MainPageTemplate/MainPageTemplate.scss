@@ -1,0 +1,32 @@
+@import "utils";
+
+.main-page-template {
+  main {
+    // background: $oc-gray-1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    position: relative;
+    background-image: url("./main_calli.png");
+    background-size: 100vw 100vh;
+    .button {
+      position: absolute;
+      width: 300px;
+      height: 100px;
+      bottom: 15%;
+      cursor: pointer;
+      -webkit-appearance: none;
+    }
+
+    @include media(">medium") {
+      background-color: #fac805;
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: 500px 550px;
+    }
+  }
+}

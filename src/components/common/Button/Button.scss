@@ -1,0 +1,52 @@
+@import "utils";
+
+.button {
+  // font: inherit;
+  color: $text;
+  padding: 0.8rem 0;
+  border-radius: 2rem;
+  cursor: pointer;
+  // border: none;
+  font-weight: 500;
+  user-select: none;
+  // display: inline-flex;
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:active {
+    border-radius: 2rem;
+  }
+
+  &.default {
+    background: $oc-blue-5;
+    &:hover {
+      background: $oc-blue-4;
+    }
+    &:active {
+      background: $oc-blue-5;
+    }
+  }
+
+  &.yellow {
+    background: $oc-yellow-5;
+    &:hover {
+      background: $oc-yellow-4;
+    }
+    &:active {
+      background: $oc-yellow-5;
+    }
+  }
+
+  .disabled {
+    background: $oc-gray-4;
+    color: $oc-gray-6;
+    cursor: default;
+    &:hover,
+    &:active {
+      background: $oc-gray-4;
+    }
+  }
+}

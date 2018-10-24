@@ -1,0 +1,29 @@
+@import "utils";
+
+.input {
+  outline: none;
+  border-radius: 2px;
+  border: 1px solid $oc-yellow-4;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  transition: color 0.3s, border-color 0.3s;
+
+  &.full-width {
+    width: 100%;
+  }
+  &:focus {
+    border: 1px solid $oc-yellow-6;
+    color: $oc-yellow-5;
+    &::placehoder {
+      color: $oc-yellow-4;
+    }
+  }
+}
+
+input:-webkit-autofill {
+  background-color: $divider-color !important;
+}
+
+.input + .input {
+  margin-top: 0.5rem;
+}

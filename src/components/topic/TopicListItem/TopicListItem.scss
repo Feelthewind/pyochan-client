@@ -1,0 +1,36 @@
+@import "utils";
+
+.topic-list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  @include media(">medium") {
+    width: 50%;
+    margin-bottom: 3rem;
+  }
+  .button-control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    .repeat-icon {
+      display: flex;
+      align-items: center;
+      margin-left: 2rem;
+      font-size: 2rem;
+      color: $text;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .progress-icon {
+      font-size: 2rem;
+      color: $text;
+    }
+  }
+  .title {
+    color: $primary-text;
+    font-weight: 500;
+  }
+}

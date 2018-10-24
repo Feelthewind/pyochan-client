@@ -1,0 +1,11 @@
+@import "utils";
+
+.page-template {
+  main {
+    background: white;
+    min-height: calc(100vh - 3rem);
+    @include media(">medium") {
+      min-height: calc(100vh - 5rem);
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import "utils";
+
+.lesson-item {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 1.2rem;
+  .jap-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: $text;
+    border-bottom: 0.1px solid $divider-color;
+    &.collapsed {
+      background-color: $light-primary-color;
+      border-bottom: none;
+    }
+    @include media(">medium") {
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+    }
+
+    svg {
+      font-size: 1.5rem;
+      color: $text;
+      &:hover {
+        cursor: pointer;
+      }
+      @include media(">medium") {
+        font-size: 2rem;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .kor-container {
+    color: $text;
+    background: $light-primary-color;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-bottom: 0.1px solid $divider-color;
+    &:hover {
+      cursor: pointer;
+    }
+    @include media(">medium") {
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+    }
+  }
+  .control-container {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    svg {
+      &:hover {
+        cursor: pointer;
+      }
+      @include media(">medium") {
+        font-size: 2rem;
+      }
+    }
+    svg + svg {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  -webkit-appearance: none;
+}

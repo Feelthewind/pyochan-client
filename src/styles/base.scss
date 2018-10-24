@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/earlyaccess/mplus1p.css");
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Mplus 1p", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}

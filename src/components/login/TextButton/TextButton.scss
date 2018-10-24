@@ -1,0 +1,18 @@
+@import "utils";
+
+.text-button {
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  &.right {
+    margin-left: auto;
+  }
+  &:hover {
+    color: $oc-yellow-4;
+    border-bottom: 1px solid $oc-yellow-5;
+  }
+  &:active {
+    color: $oc-yellow-5;
+    border-bottom: 1px solid $oc-yellow-6;
+  }
+}
