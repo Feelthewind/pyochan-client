@@ -67,27 +67,15 @@ class LessonListContainer extends Component {
     await ListActions.collapse({ id });
   };
 
-  handleSpeak = id => {
-    const { ListActions } = this.props;
-    ListActions.setAudioUrl({ id });
-  };
-
   render() {
-    const {
-      loading,
-      lessons,
-      user,
-      currentAudioUrl,
-      playbackRate
-    } = this.props;
+    const { loading, lessons, user } = this.props;
 
     const {
       handleLike,
       handleUnlike,
       handleComplete,
       handleLogin,
-      handleCollapse,
-      handleSpeak
+      handleCollapse
     } = this;
     if (loading)
       return (
@@ -110,10 +98,7 @@ class LessonListContainer extends Component {
           onUnlike={!user ? handleLogin : handleUnlike}
           onCollapse={handleCollapse}
           onComplete={handleComplete}
-          onSpeak={handleSpeak}
           user={user}
-          currentAudioUrl={currentAudioUrl}
-          playbackRate={playbackRate}
         />
       </div>
     );
@@ -124,8 +109,6 @@ export default connect(
   ({ list, pender, user }) => ({
     lessons: list.lessons,
     user: user.user,
-    currentAudioUrl: list.currentAudioUrl,
-    playbackRate: list.playbackRate,
     loading: pender.pending["list/GET_LESSON_LIST"]
   }),
   dispatch => ({

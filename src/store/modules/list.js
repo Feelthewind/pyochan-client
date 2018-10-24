@@ -19,7 +19,6 @@ const SET_LIKE = "list/SET_LIKE";
 const SET_UNLIKE = "list/SET_UNLIKE";
 const COLLAPSE = "list/COLLAPSE";
 const REVIEW_COLLAPSE = "list/REVIEW_COLLAPSE";
-const SET_AUDIO_URL = "list/SET_AUDIO_URL";
 
 // action creators
 export const initialize = createAction(INITAILIZE);
@@ -43,15 +42,12 @@ export const setUnlike = createAction(SET_UNLIKE);
 export const removeReview = createAction(REMOVE_REVIEW);
 export const collapse = createAction(COLLAPSE);
 export const reviewCollapse = createAction(REVIEW_COLLAPSE);
-export const setAudioUrl = createAction(SET_AUDIO_URL);
 
 // initial state =
 const initialState = {
   topics: [],
   lessons: [],
-  reviews: [],
-  currentAudioUrl:
-    "https://s3-ap-northeast-1.amazonaws.com/pyochan.com.polly/speech-160546d4-ebf3-4ea3-8aad-2c40238afdf1.mp3"
+  reviews: []
 };
 
 // reducer
@@ -61,13 +57,6 @@ export default handleActions(
       produce(state, draft => {
         draft = initialState;
       }),
-    [SET_AUDIO_URL]: (state, action) => {
-      return produce(state, draft => {
-        const { id } = action.payload;
-        const lesson = draft.lessons.find(lesson => lesson.id === id);
-        draft.currentAudioUrl = lesson.audioUrl;
-      });
-    },
     [REMOVE_REVIEW]: (state, action) => {
       return produce(state, draft => {
         draft.reviews = draft.reviews.filter(

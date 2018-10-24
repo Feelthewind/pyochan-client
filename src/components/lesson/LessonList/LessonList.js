@@ -13,30 +13,33 @@ class LessonList extends Component {
       onLike,
       onUnlike,
       onCollapse,
-      onSpeak,
       user,
-      onComplete,
-      currentAudioUrl,
-      playbackRate
+      onComplete
     } = this.props;
 
     const lessonList = lessons.map(lesson => {
-      const { id, jap, kor, diction, collapsed, liked = false } = lesson;
+      const {
+        id,
+        jap,
+        kor,
+        diction,
+        collapsed,
+        liked = false,
+        audioUrl
+      } = lesson;
       return (
         <LessonItem
           key={id}
           jap={jap}
           kor={kor}
           id={id}
+          audioUrl={audioUrl}
           collapsed={collapsed}
           diction={diction}
           liked={liked}
           onLike={e => onLike(id, e)}
           onUnlike={e => onUnlike(id, e)}
           onCollapse={() => onCollapse(id)}
-          onSpeak={() => onSpeak(id)}
-          currentAudioUrl={currentAudioUrl}
-          playbackRate={playbackRate}
         />
       );
     });

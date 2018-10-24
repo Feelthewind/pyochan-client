@@ -13,8 +13,7 @@ const cx = classNames.bind(styles);
 
 class LessonItem extends Component {
   handleToggle = async id => {
-    const { onCollapse, collapsed, onSpeak } = this.props;
-    onSpeak();
+    const { onCollapse, collapsed } = this.props;
     onCollapse(id);
     await this.audio.play();
     this.audio.play();
@@ -48,7 +47,7 @@ class LessonItem extends Component {
       onUnlike,
       collapsed,
       liked,
-      currentAudioUrl
+      audioUrl
     } = this.props;
 
     const { handleToggle, handleSpeak, handleSlowSpeak } = this;
@@ -58,7 +57,7 @@ class LessonItem extends Component {
           className={cx("jap-container", { collapsed })}
           onClick={() => handleToggle(id)}
         >
-          <div>{jap}</div>
+          <div className={cx("jap")}>{jap}</div>
           {liked ? (
             <MdStar className={cx("gray-star")} onClick={e => onUnlike(e)} />
           ) : (
@@ -79,9 +78,8 @@ class LessonItem extends Component {
           </div>
         )}
         <audio
-          defaultplaybackrate={0.5}
-          playbackrate={0.1}
-          src={currentAudioUrl}
+          src={audioUrl}
+          preload="none"
           hidden
           ref={ref => (this.audio = ref)}
         />
